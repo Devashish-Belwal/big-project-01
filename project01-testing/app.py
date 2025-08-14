@@ -1,13 +1,16 @@
 import streamlit as st
 import pickle
 import numpy as np
+import os
+
+BASE_DIR = os.path.dirname(__name__)
 
 # Load the pre-trained model
-with open('models/ridge.pkl', 'rb') as file:
+with open(os.path.join(BASE_DIR, "models", "ridge.pkl"), 'rb') as file:
     model = pickle.load(file)
 
 # Load the scaler
-with open('models/scaler.pkl', 'rb') as file:
+with open(os.path.join(BASE_DIR, "models", "scaler.pkl"), 'rb') as file:
     scaler = pickle.load(file)
 
 # Set the title of the app
